@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+HomePage Papelaria
+{% endblock %}
+
+{% block head %}
+<style>
+    #id_email{
+        width: 100%;
+        color: #000000;
+        padding: 5px 5px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <header class="min-h-screen bg-white bg-opacity-75 showcase border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat"  style="background-image: url('{% static 'images/v.png' %}'); background-size: cover;">
+        <div class="z-10 h-full py-32 md:py-0 text-yellow-500 text-center flex items-center flex-col">
+
+            <h1 class="font-semibold text-4xl md:text-5xl w-10/12 md:w-3/4 text-center">
+                Materias de Papelaria, tudo em um só lugar.
+            </h1>
+            <h3 class="text-xl md:text-xl py-5 text-black">
+                Adquira onde quiser. Cancele quando quiser.
+            </h3>
+            
+            <div class="w-full flex justify-center">
+                <div class="flex justify-center items-center w-11/12 md:w-10/12">
+                    <form method="post" class="w-6/12 justify-center">
+                        {% csrf_token %}
+                        <div class="flex flex-grow items-stretch">
+                            {{ form }}
+                        <button class="bg-gray-300 font-medium md:font-normal flex justify-center items-center py-1 px-3 md:px-0 rounded-br-sm rounded-tr-sm md:text-2xl" type="submit">
+                            <span>
+                                <p class="text-gray-700">Acessar</p>
+                            </span>
+                            <ion-icon name="chevron-forward-outline" class="text-2xl"></ion-icon>
+                        </button>
+                        </div>
+                    </form>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
+        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left p-5 md:p-10 ">
+            <h2 class="md:text-5xl text-4xl font-semibold mb-4">
+                Divirta-se!
+            </h2>
+            <h5 class="md:text-xl text-lg">
+                Adquira seus materiais de papelaria, grande variedade e boa qualidade.
+            </h5>
+        </div>
+        <div class='md:w-1/2 flex justify-center items-center'>
+            <img src="{% static 'images/b.jpg' %}" class="w-8/12" alt="foto" id='SFSCU' width='50' height='50'>
+        </div>
+    </section>
+
+    <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
+        <div class='md:w-1/2 flex justify-center items-center '>
+            <img src="{% static 'images/c.jpg' %}" class="w-8/12" alt="foto" id='b' width='50' height='50'>
+        </div>
+
+        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left p-5 md:p-10">
+            <h2 class="md:text-5xl text-4xl font-semibold mb-4">
+                Escolha seus materiais preferidos para trabalhar.
+            </h2>
+            <h5 class="md:text-xl text-lg">
+                Marque seus favoritos facilmente.
+            </h5>
+        </div>
+    </section>
+
+    <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
+        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left p-5 md:p-10">
+            <h2 class="md:text-5xl text-4xl font-semibold mb-4">
+                Crie perfil para acesso.
+            </h2>
+            <h5 class="md:text-xl text-lg">
+                Permita que você tenham uma variedade de materiais.
+            </h5>
+        </div>
+        <div class='md:w-1/2 flex justify-center items-center'>
+            <img src="{% static 'images/d.png' %}" class="w-8/12" alt="foto" id='q' width='50' height='50'>
+        </div>
+    </section>
+        <footer class="bg-gray-100">
+            <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
+                <div class="footer-left mb-12 md:mb-0">
+                    <h2 class="mb-1 uppercase text-gray-700">Sobre o grupo</h2>
+                    <p class="text-gray-700">João Victor Michels Behn</p>
+                    <p class="text-gray-700">Leonardo da Rosa Pereira</p>
+                    <p class="text-gray-700">Mauro Sérgio J A Pereira</p>
+                    <p class="text-gray-700">Natália Geni Felipe Spektor</p>
+                </div>    
+                <div class="footer-right">
+                    <h2 class="mb-3 uppercase text-lg text-gray-700">Link dos Github</h2>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-purple-500 hover:text-purple-800">Github do leo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+{% endblock %}

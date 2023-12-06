@@ -1,0 +1,14 @@
+# user: leo / leo123
+
+# estrutura:
+# - trabalho_aoo = pasta projeto
+# - trabalho_aoo = setup
+# - products     = app
+# - episodios    = episodios
+# - usuarios     = usuarios
+# https://127.0.0.1:800/product/2
+
+# 2o perfil: mauro / ma654321
+
+
+

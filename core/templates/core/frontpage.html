@@ -1,0 +1,86 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<header class="px-6 py-10 lg:py-20 bg-yellow-500">
+    <div class="max-w-3xl mx-auto text-center">
+        <p class="mb-2 text-3xl lg:text-5xl text-white">Bem Vindo a Papelaria</p>
+
+        <a href="shop/" class="inline-block px-8 py-4 rounded-xl bg-white text-yellow-500 hover:bg-gray-200">Compre!</a>
+    </div>
+</header>
+
+<div class="max-w-6xl mx-auto py-2 px-6 xl:px-0">
+    <div class="products flex items-center flex-wrap">
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6">
+            <a href="product/">
+                <img class="rounded-xl hover:shadow-lg src=https://m.media-amazon.com/images/I/61qJtbgF-TL.__AC_SX300_SY300_QL70_ML2_.jpg">
+            </a>
+
+            <div class="pt-3 flex items-center justify-between">
+                <a href="product/">Caneta BIC</a>
+
+                <a href="product/" class="text-yellow-500 hover:text-yellow-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+            </div>
+
+            <p class="pt-1 text-gray-400">R$0,99</p>
+        </div>
+
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6">
+            <a href="#">
+                <img class="rounded-xl hover:shadow-lg">
+            </a>
+
+            <div class="pt-3 flex items-center justify-between">
+                <a href="product2/">Lápis Faber-Castell</a>
+
+                <a href="product2/" class="text-yellow-500 hover:text-yellow-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+            </div>
+
+            <p class="pt-1 text-gray-400">R$ 0,50</p>
+        </div>
+        
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6">
+            <a href="product2/">
+                <img class="rounded-xl hover:shadow-lg">
+            </a>
+
+            <div class="pt-3 flex items-center justify-between">
+                <a href="product3/">Estojo</a>
+
+                <a href="product3/" class="text-yellow-500 hover:text-yellow-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+            </div>
+
+            <p class="pt-1 text-gray-400">R$ 15,00</p>
+        </div>
+
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6">
+            <a href="product4/">
+                <img class="rounded-xl hover:shadow-lg">
+            </a>
+
+            <div class="pt-3 flex items-center justify-between">
+                <a href="product4/">Lápisera</a>
+
+                <a href="product4/" class="text-yellow-500 hover:text-yellow-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+            </div>
+
+            <p class="pt-1 text-gray-400">$22,99</p>
+        </div>
+</div>
+{% endblock %}

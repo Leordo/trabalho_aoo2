@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+HomePage Papelaria
+{% endblock %}
+
+{% block content %}
+<div class="px-6 py-10 lg:py-20 bg-yellow-500">
+    <div class="max-w-3xl mx-auto">
+        <p class="mb text-3xl lg:text-5xl text-white">Bem Vindo a Papelaria</p>
+    </div>
+</div>
+
+    <main class='bg-primary_black min-h-screen w-full'>
+        <section class='bg-primary_black flex justify-center py-10'>
+            <div class="p-8 w-10/12 relative" >
+                <h2 class="bg-yellow-500 py-1 px-3 text-white md-4:text-lg rounded-md">
+                    Novos Produtos:
+                </h2>
+                <div class="wrapper">
+                    <section id="section1" class="flex flex-nowrap items-center justify-center space-x-8">
+                        <a href="#section2" class="arrow__btn text-6xl page">‹</a>
+                        {% for product in lista_products_recentes %}
+                            {% if forloop.counter < 5 %}
+                            <div class="item h-64 w-1/4 m-4">
+                                <a href="{% url 'product:detailsproduct' product.pk %}">
+                                    <img src="{{ product.thumb.url }}" class="rounded-md w-full h-full object-cover">
+                                </a>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                            <a href="#section2" class="arrow__btn text-6xl">›</a>
+                    </section>
+                        {% if lista_products_recentes|length > 4 %}
+                            <section id="section2" class="flex flex-nowrap items-center justify-center">
+                                <a href="#section1" class="arrow__btn text-6xl">‹</a>
+                                    {% for product in lista_products_recentes %}
+                                        {% if forloop.counter > 4 %}
+                                        <div class="item h-64 w-1/4 m-4">
+                                            <a href="{% url 'product:detailsproduct' product.pk %}">
+                                                <img src="{{ product.thumb.url }}" class="rounded-md w-full h-full object-cover">
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                <a href="#section1" class="arrow__btn text-6xl">›</a>
+                            </section>
+                        {% endif %}    
+                </div>
+            </div>
+        </section>
+
+        <section class='bg-primary_black flex justify-center py-10'>
+            <div class="p-8 w-10/12 relative" >
+                <h2 class="bg-yellow-500 py-1 px-3 text-white md-4:text-lg rounded-md">
+                    Produtos em Alta:
+                </h2>
+                <div class="wrapper">
+                    <section id="section1emalta" class="flex flex-nowrap items-center justify-center space-x-8">
+                        <a href="#section2emalta" class="arrow__btn text-6xl page">‹</a>
+                        {% for product in lista_products_em_alta %}
+                            {% if forloop.counter < 5 %}
+                            <div class="item h-64 w-1/4 m-4">
+                                <a href="{% url 'product:detailsproduct' product.pk %}">
+                                    <img src="{{ product.thumb.url }}" class="rounded-md w-full h-full object-cover">
+                                </a>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                            <a href="#section2emalta" class="arrow__btn text-6xl">›</a>
+                    </section>
+                    {% if lista_products_recentes|length > 4 %}
+                        <section id="section2emalta" class="flex flex-nowrap items-center justify-center">
+                            <a href="#section1emalta" class="arrow__btn text-6xl">‹</a>
+                            {% for product in lista_products_em_alta %}
+                                {% if forloop.counter > 4 %}
+                                <div class="item h-64 w-1/4 m-4">
+                                    <a href="{% url 'product:detailsproduct' product.pk %}">
+                                        <img src="{{ product.thumb.url }}" class="rounded-md w-full h-full object-cover">
+                                    </a>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                            <a href="#section1emalta" class="arrow__btn text-6xl">›</a>
+                        </section>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section class='bg-primary_black flex justify-center py-10'>
+            <div class="p-8 w-10/12 relative" >
+                <h2 class="bg-yellow-500 py-1 px-3 text-white md-4:text-lg rounded-md">
+                    Produtos Vistos:
+                </h2>
+                <div class="wrapper">
+                    <section id="section1vistos" class="flex flex-nowrap items-center justify-center space-x-8">
+                        <a href="#section2vistos" class="arrow__btn text-6xl page">‹</a>
+                            {% for product in request.user.products_vistos.all %}
+                                {% if forloop.counter < 5 %}
+                                <div class="item h-64 w-1/4 m-4">
+                                    <a href="{% url 'product:detailsproduct' product.pk %}">
+                                        <img src="{{ product.thumb.url }}" class="rounded-md w-full h-full object-cover">
+                                    </a>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                                <a href="#section2vistos" class="arrow__btn text-6xl">›</a>
+                    </section>
+                        {% if request.user.products_vistos.all|length > 4 %}
+                            <section id="section2vistos" class="flex flex-nowrap items-center justify-center">
+                                <a href="#section1vistos" class="arrow__btn text-6xl">‹</a>
+                                {% for product in request.user.products_vistos.all %}
+                                    {% if forloop.counter > 4 %}
+                                    <div class="item h-64 w-1/4 m-4">
+                                        <a href="{% url 'product:detailsproduct' product.pk %}">
+                                            <img src="{{ product.thumb.url }}" class="rounded-md w-full h-full object-cover">
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <a href="#section1vistos" class="arrow__btn text-6xl">›</a>
+                            </section>
+                        {% endif %}
+                </div>
+            </div>
+        </section>
+        <footer class=" px-10 py-5 ">
+            <ul class="flex justify-between items-center">
+                <div class="px-6 py-10 rounded-xl lg:py-10 bg-yellow-500">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <a href="shop/" class="inline-block px-4 py-2 rounded-xl text-white hover:bg-gray-200">Compre!</a>
+                    </div>
+                </div>
+            </ul>
+        </footer>
+    </main>
+{% endblock %}

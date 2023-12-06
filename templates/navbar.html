@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<nav class="w-full flex justify-between items-center py-3 px-4 fixed z-50">
+    <div class="w-6/12">
+        <a href="/">
+            <img class = "w-2/12" src="{% static 'images/paperpal.jpg' %}">
+            <p class="text-black">Papelaria Space</p>
+        </a>
+    </div>
+    
+    <div class="w-6/12 flex flex-nowrap justify-end">
+        {% if user.is_authenticated %}
+            <div class="mr-2">
+                <form method="get" action="{% url 'product:pesquisaproduct' %}">
+                    <input type="text" class="py-1 px-2 rounded-md text-black" name="query" value="{{ request.GET.query }}" placeholder="Pesquisar...">
+                    <input type="submit" value="">
+                </form>
+            </div>
+        {% endif %}
+
+        <div class="mr-2">
+            {% if user.is_authenticated %}
+                <a href="{% url 'product:editarperfil' request.user.pk %}">
+                    <button class="bg-blue-600 text-white py-1 px-3 rounded-md">
+                        Editar Perfil
+                    </button>
+                </a>
+            {% endif %}
+        </div>
+        
+        <div class="mr-2">
+            {% if user.is_authenticated %}
+                <a href="{% url 'product:logout' %}">
+                    <button class="bg-blue-600 text-white py-1 px-3 rounded-mr">
+                        SAIR
+                    </button>
+                </a>
+            {% else %}
+                <a href="{% url 'product:login' %}">
+                    <button class="bg-blue-600 text-white py-1 px-3 rounded-md">
+                        Login
+                    </button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+
+

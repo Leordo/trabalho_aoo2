@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body>
+        <nav class="border-b border-gray-300">
+            <div class="max-w-6xl mx-auto py-2 px-6 xl:px-0 flex items-center justify-between">
+                <div class="menu-left flex items-center space-x-6">
+                    <a href="#" class="py-4 text-lg text-yellow-500 font-semibold">Papelaria Space</a>
+
+                    <ul class="flex items-center space-x-4">
+                        <li><a href="{% url 'shop' %}">Loja</a></li>
+                    </ul>
+                </div>
+        <div class="w-6/12 flex flex-nowrap justify-end">
+            <div class="mr-2">
+                <a>
+                    <button class="bg-yellow-600 text-white py-1 px-3 rounded-md">
+                        Editar Perfil
+                    </button>
+                </a>
+            </div>
+            <div class="mr-2">
+                <a>
+                    <button class="bg-yellow-600 text-white py-1 px-3 rounded-mr">
+                        SAIR
+                    </button>
+                </a>
+            </div>
+        </div>    
+        </nav>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer class="bg-gray-100">
+            <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
+                <div class="footer-left mb-12 md:mb-0">
+                    <h2 class="mb-1 uppercase text-lg">Sobre o grupo</h2>
+                    <p class="text-gray-700">João Victor Michels Behn</p>
+                    <p class="text-gray-700">Leonardo da Rosa Pereira</p>
+                    <p class="text-gray-700">Mauro Sérgio J A Pereira</p>
+                    <p class="text-gray-700">Natalia Geni Felipe Spektor</p>
+                </div>
+
+                <div class="footer-right">
+                    <h2 class="mb-5 uppercase text-lg">Link do Github</h2>
+
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-purple-500 hover:text-purple-800">Github do leo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
